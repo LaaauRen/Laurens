@@ -1,0 +1,488 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d0d0d;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+/* ===== Header / Navbar ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  padding: 20px 40px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ffff;
+  text-decoration: none;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #2a2a2a;
+  border-radius: 20px;
+  padding: 5px 10px;
+  box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.2);
+}
+
+.search input {
+  border: none;
+  background: transparent;
+  color: #fff;
+  padding: 5px;
+  outline: none;
+}
+
+.search i {
+  color: #00ffff;
+  margin-left: 8px;
+}
+
+/* Styling untuk kontainer iklan video */
+.ad-container {
+  width: 20%; /* Lebar penuh */
+  max-width: 1200px; /* Batasi lebar maksimal jika desain Anda memiliki lebar konten tertentu */
+  margin: 20px auto; /* Memberi jarak atas bawah dan menengahkan */
+  overflow: hidden; /* Memastikan tidak ada luapan konten */
+  border-radius: 8px; /* Sudut sedikit membulat seperti di gambar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sedikit bayangan untuk menonjolkan */
+  background-color: #333; /* Warna latar belakang jika video belum load */
+}
+
+/* Styling untuk video iklan */
+.ad-video {
+  width: 100%; /* Video akan mengisi lebar kontainernya */
+  height: auto; /* Tinggi akan menyesuaikan agar rasio aspek video tetap terjaga */
+  display: block; /* Menghilangkan spasi ekstra di bawah video */
+}
+
+/* Sesuaikan ini jika Anda ingin video memiliki tinggi tetap, namun hati-hati dengan rasio aspek */
+/* .ad-video {
+  width: 100%;
+  height: 150px; /* Contoh tinggi tetap */
+  /* object-fit: cover; /* Memastikan video menutupi area yang ditentukan tanpa mengubah rasio aspek */
+/* } */
+
+/* Styling lainnya yang sudah ada di main.css Anda */
+/* header { ... } */
+/* .main-section-title { ... } */
+/* .konten-grid { ... } */
+/* .komik-card { ... } */
+/* .populer-section { ... } */
+/* footer { ... } */
+
+.main-section-title {
+  font-size: 28px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  margin: 20px;
+}
+
+.konten-grid {
+  max-width: 1000px;
+  margin: 20px auto; 
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.komik-card {
+  border: 2px solid rgba(0, 255, 255, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 200px; 
+}
+
+.komik-cover {
+  width: 100%;
+  height: 200px;
+  object-fit: fill; 
+  border-radius: 8px 8px 0 0;
+  background-color: transparent; 
+  transition: transform 0.3s ease;
+}
+
+.cover-link:hover .komik-cover {
+  transform: scale(1.05);
+}
+
+.card-info {
+  background-color: #0d0d0d;
+  backdrop-filter: blur(4px);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 0 0 12px 12px;
+}
+
+.judul-komik {
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 0 0 4px 0;
+  /* min-height: 48px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 2.4em; /* Approx 2 lines height (1.2em * 2) */
+  display: -webkit-box; /* For webkit browsers */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical; /* Vertical orientation for line clamping */
+  overflow: hidden; /* Hide overflow content */
+  text-overflow: ellipsis; /* Add ellipsis for overflow */
+  line-height: 1.2em;
+}
+
+
+.judul-komik:hover {
+  text-decoration: underline;
+}
+
+.komik-ch {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ch-link {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 0.9rem;
+  background: #2e2e44;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.ch-link:hover {
+  background: #444464;
+}
+
+/* Populer Section */
+.populer-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.populer-grid {
+  display: flex;
+  flex-wrap: nowrap; 
+  gap: 20px;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch; 
+  padding-bottom: 10px; 
+  justify-content: flex-start; 
+}
+
+.populer-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.populer-grid::-webkit-scrollbar-thumb {
+  background-color: #444464;
+  border-radius: 4px;
+}
+
+.populer-grid::-webkit-scrollbar-track {
+  background-color: #2a2a2a;
+}
+
+.populer-card {
+  border-radius: 8px;
+  overflow: hidden;
+  color: #fff;
+  flex-shrink: 0; 
+  width: 150px; 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.populer-cover-link {
+  display: block;
+  position: relative;
+}
+
+.populer-cover {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.populer-cover-link:hover .populer-cover {
+  transform: scale(1.05);
+}
+
+.card-status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #00ffff;
+  color: #0d0d0d;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.populer-card-info {
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.populer-judul-komik {
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  min-height: 2.4em; /* Approx 2 lines height (1.2em * 2) */
+  display: -webkit-box; /* For webkit browsers */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical; /* Vertical orientation for line clamping */
+  overflow: hidden; /* Hide overflow content */
+  text-overflow: ellipsis; /* Add ellipsis for overflow */
+  line-height: 1.2em; /* Height of one line */
+}
+
+.populer-judul-komik:hover {
+  text-decoration: underline;
+}
+
+.populer-komik-ch {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 5px;
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.populer-ch-current {
+  font-weight: bold;
+  color: #00ffff;
+}
+
+.populer-views {
+  color: #ccc;
+}
+
+/* Styling untuk bagian form saran */
+.suggestion-form-section {
+  background-color: #222;
+  padding: 40px 20px;
+  margin: 40px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.suggestion-form-section h2 {
+  color: #f0f0f0;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.suggestion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.form-group {
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  color: #ccc;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: #eee;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+
+/* --- Styling Pop-up Pesan Sukses --- */
+.popup-container {
+  display: none; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.popup-content {
+  background-color: #2a2a2a; 
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+  max-width: 350px;
+  width: 90%;
+  animation: slideIn 0.3s ease-out;
+  color: #f0f0f0;
+}
+
+.check-icon {
+  font-size: 4em;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.popup-content p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.close-popup-btn { 
+  background-color: #007bff;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.close-popup-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Animasi untuk pop-up */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Tampilkan popup saat kelas 'show' ditambahkan oleh JS */
+.popup-container.show {
+  display: flex; 
+}
+
+footer {
+  background-color: #444464;
+  padding: 20px;
+  text-align: center;
+}
+
+.cop-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00ffff;
+  text-decoration: none;
+  text-shadow: 0 0 10px #00ffff;
+  display: block;
+  margin-bottom: 20px;
+}
